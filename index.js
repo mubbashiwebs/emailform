@@ -225,8 +225,8 @@ else{
 }
 });
 
-app.post('/test', async(req,res)=>{
-    console.log(req.body)
+app.get('/test', async(req,res)=>{
+    res.send('I am working')
 })
 
 let port = process.env.PORT || 3000
