@@ -18,9 +18,13 @@ mongoose.connect(url , { useNewUrlParser: true}).then(()=>{
   console.log(err + 11)
 })
 
-
-
-app.use(cors());
+var corsConfig = {
+    origin : "*",
+    credential:true,
+    methods : ["GET","POST","PUT", "DELETE"]
+};
+app.options("",cors(corsConfig))
+app.use(cors(corsConfig));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -170,7 +174,7 @@ app.post('/submitCarrerForm', upload.single('cv'), async (req, res) => {
 }
     else{
         return  res.send('auth is not found')
-      }
+      }1
 });
 
 
