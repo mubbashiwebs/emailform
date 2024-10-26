@@ -13,9 +13,7 @@ app.use(express.json());
 
 // Use the email routes
 app.use('/api', emailRoutes);
-app.get('/',(req,res)=>{
-res.send('running')
-})
+
 // Start the server
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
